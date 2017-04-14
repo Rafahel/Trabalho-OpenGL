@@ -200,6 +200,7 @@ void figuraE(){
 }
 
 void figuraF(){
+    glTranslatef(-100, -100, 0);
     glColor3f(0,1,0);
     glBegin(GL_TRIANGLES);
     glVertex2f(0, 0);
@@ -255,16 +256,155 @@ void figuraF(){
 
 }
 
+void figuraG(){
+    glTranslatef(150, -200, 0);
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(0, 15);
+    glVertex2f(15, 30);
+    glVertex2f(15, 0);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(3, 15);
+    glVertex2f(3, 30);
+    glVertex2f(25, 30);
+    glVertex2f(25, 15);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(15, 0);
+    glVertex2f(15, 15);
+    glVertex2f(30, 15);
+    glVertex2f(30, 0);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(30, 0);
+    glVertex2f(30, 15);
+    glVertex2f(40, 0);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(25, 30);
+    glVertex2f(50, 30);
+    glVertex2f(25, 10);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(3, 30);
+    glVertex2f(3, 40);
+    glVertex2f(12, 30);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(3, 40);
+    glVertex2f(12, 30);
+    glVertex2f(20, 40);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(3, 40);
+    glVertex2f(12, 50);
+    glVertex2f(20, 40);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(20, 40);
+    glVertex2f(20, 55);
+    glVertex2f(12, 55);
+    glVertex2f(12, 40);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(20, 55);
+    glVertex2f(10, 70);
+    glVertex2f(-1, 55);
+    glEnd();
+}
+
+void figuraH(){
+    glTranslatef(-180,300,0);
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(45, 0);
+    glVertex2f(60, 15);
+    glVertex2f(60, 0);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(65, 15);
+    glVertex2f(65, 30);
+    glVertex2f(50, 30);
+    glVertex2f(50, 15);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(50, 30);
+    glVertex2f(35, 45);
+    glVertex2f(60, 45);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(50, 30);
+    glVertex2f(50, 45);
+    glVertex2f(65, 45);
+    glVertex2f(65, 30);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(55, 45);
+    glVertex2f(70, 45);
+    glVertex2f(70, 25);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(30, 45);
+    glVertex2f(60, 45);
+    glVertex2f(60, 70);
+    glEnd();
+    
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(60, 70);
+    glVertex2f(50, 70);
+    glVertex2f(50, 85);
+    glVertex2f(60, 85);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(40, 90);
+    glVertex2f(70, 90);
+    glVertex2f(70, 60);
+    glEnd();
+
+}
+
 void grafico(){
     glColor3f(0,0,1);
     glBegin(GL_LINES);
-    glVertex2f(0, 100);
-    glVertex2f(0, -100);
+    glVertex2f(0, 300);
+    glVertex2f(0, -300);
     glEnd();
     glColor3f(0,0,1);
     glBegin(GL_LINES);
-    glVertex2f(-100, 0);
-    glVertex2f(100, 0);
+    glVertex2f(-300, 0);
+    glVertex2f(300, 0);
     glEnd();
 }
 
@@ -274,30 +414,23 @@ void Desenha(void)
     glClearColor(0,0,0,0);
     glClear(GL_COLOR_BUFFER_BIT);
     grafico();
+
+
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE);
+    glEnable(GLUT_MULTISAMPLE);
+
+
+
     //figuraA();
     // figuraB();
     // figuraC();
     // figuraD();
     // figuraE();
     // figuraF();
+    figuraG();
+    figuraH();
 
-    glColor3f(0,1,0);
-    glBegin(GL_QUADS);
-    glVertex2f(50, 0);
-    glVertex2f(50, 20);
-    glVertex2f(60, 20);
-    glVertex2f(60, 0);
-    glEnd();
-
-    glColor3f(0,1,0);
-    glBegin(GL_TRIANGLES);
-    glVertex2f(45, 20);
-    glVertex2f(55, 40);
-    glVertex2f(65, 20);
-    glEnd();
-
-    
-    
+ 
     
 
 
@@ -325,7 +458,7 @@ void Inicializa(void)
 {
     // Define a janela de visualização 2D
     glMatrixMode(GL_PROJECTION);
-    gluOrtho2D(-100,100,-100,100);
+    gluOrtho2D(-200,200,-200,200);
     glMatrixMode(GL_MODELVIEW);
 }
 
