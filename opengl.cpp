@@ -167,16 +167,138 @@ void figuraD(){
     glEnd();
 }
 
+void figuraE(){
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(0, 0);
+    glVertex2f(0, 20);
+    glVertex2f(60, 20);
+    glVertex2f(60, 0);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(5, 20);
+    glVertex2f(5, 35);
+    glVertex2f(20, 35);
+    glVertex2f(20, 20);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(0, 35);
+    glVertex2f(12, 50);
+    glVertex2f(25, 35);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(60, 20);
+    glVertex2f(50, 35);
+    glVertex2f(40, 20);
+    glEnd();
+}
+
+void figuraF(){
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(0, 0);
+    glVertex2f(10, 10);
+    glVertex2f(20, 0);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(10, 0);
+    glVertex2f(10, 10);
+    glVertex2f(50, 10);
+    glVertex2f(50, 0);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(10, 10);
+    glVertex2f(10, 25);
+    glVertex2f(25, 25);
+    glVertex2f(25, 10);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(30, 10);
+    glVertex2f(30, 25);
+    glVertex2f(50, 25);
+    glVertex2f(50, 10);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(10, 25);
+    glVertex2f(30, 45);
+    glVertex2f(50, 25);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(30, 45);
+    glVertex2f(30, 55);
+    glVertex2f(45, 55);
+    glVertex2f(45, 0);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(50, 25);
+    glVertex2f(60, 10);
+    glVertex2f(40, 10);
+    glEnd();
+
+}
+
+void grafico(){
+    glColor3f(0,0,1);
+    glBegin(GL_LINES);
+    glVertex2f(0, 100);
+    glVertex2f(0, -100);
+    glEnd();
+    glColor3f(0,0,1);
+    glBegin(GL_LINES);
+    glVertex2f(-100, 0);
+    glVertex2f(100, 0);
+    glEnd();
+}
+
 void Desenha(void)
 {
     // Limpa a janela de visualização com a cor branca
     glClearColor(0,0,0,0);
     glClear(GL_COLOR_BUFFER_BIT);
-
+    grafico();
     //figuraA();
     // figuraB();
     // figuraC();
-    figuraD();
+    // figuraD();
+    // figuraE();
+    // figuraF();
+
+    glColor3f(0,1,0);
+    glBegin(GL_QUADS);
+    glVertex2f(50, 0);
+    glVertex2f(50, 20);
+    glVertex2f(60, 20);
+    glVertex2f(60, 0);
+    glEnd();
+
+    glColor3f(0,1,0);
+    glBegin(GL_TRIANGLES);
+    glVertex2f(45, 20);
+    glVertex2f(55, 40);
+    glVertex2f(65, 20);
+    glEnd();
+
+    
+    
+    
 
 
 
