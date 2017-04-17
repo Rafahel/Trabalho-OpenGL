@@ -4,6 +4,7 @@
 #include <GL/glut.h>
 #define GLUT_DISABLE_ATEXIT_HACK
 
+int i = 0; // Contador do desenho atual
 //// Função callback de redesenho da janela de visualização
 void figuraA(){
   glColor3f(0,1,0);
@@ -198,7 +199,6 @@ void figuraE(){
 }
 
 void figuraF(){
-    glTranslatef(-100, -100, 0);
     glColor3f(0,1,0);
     glBegin(GL_TRIANGLES);
     glVertex2f(0, 0);
@@ -255,7 +255,6 @@ void figuraF(){
 }
 
 void figuraG(){
-    glTranslatef(150, -200, 0);
     glColor3f(0,1,0);
     glBegin(GL_TRIANGLES);
     glVertex2f(0, 15);
@@ -331,7 +330,6 @@ void figuraG(){
 }
 
 void figuraH(){
-    // glTranslatef(-180,300,0);
     glColor3f(0,1,0);
     glBegin(GL_TRIANGLES);
     glVertex2f(45, 0);
@@ -406,7 +404,6 @@ void grafico(){
     glEnd();
 }
 
-
 void boneco(){
 
 	glColor3f(0,0,0);
@@ -432,7 +429,6 @@ void boneco(){
     glVertex2f(25, -55);
     glVertex2f(25, -60);
     glEnd();
-
     
     glBegin(GL_QUADS);
     glVertex2f(25, -55);
@@ -441,14 +437,12 @@ void boneco(){
     glVertex2f(25, -40);
     glEnd();
 
-
     glBegin(GL_QUADS);
     glVertex2f(35, -40);
     glVertex2f(20, -40);
     glVertex2f(20, -45);
     glVertex2f(35, -45);
     glEnd();
-
 
     glBegin(GL_QUADS);
     glVertex2f(30, -40);
@@ -746,57 +740,50 @@ void desenho(){
 
 }
 
-
-
-
-
-void Desenha(void)
-{
+void Desenha(void){
     // Limpa a janela de visualização com a cor branca
     glClearColor(0,0,0,0);
     glClear(GL_COLOR_BUFFER_BIT);
     
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE);
     glEnable(GLUT_MULTISAMPLE);
-
-
-
-    //figuraA();
-    // figuraB();
-    // figuraC();
-    // figuraD();
-    // figuraE();
-    // figuraF();
-    // figuraG();
-    // figuraH();
-    grafico();
-    desenho();
- 
-    
-
-
-
-
-
-    
-
-
-    
-
+    switch(i){
+    	case 1:	figuraA();
+    			break;
+    	case 2: figuraB();    
+    			break;	
+    	case 3:	figuraC();
+    			break;
+    	case 4: figuraD();    
+    			break;	
+    	case 5:	figuraE();
+    			break;
+    	case 6: figuraF();    
+    			break;	
+    	case 7:	figuraG();
+    			break;
+    	case 8: figuraH();    
+    			break;	
+    	case 9: desenho();
+    			i = 0;    
+    			break;
+    }
     //Executa os comandos OpenGL
     glFlush();
 }
 
 // Função callback chamada para gerenciar eventos de teclas
-void Teclado (unsigned char key, int x, int y)
-{
+void Teclado (unsigned char key, int x, int y){
     if (key == 27)
-        exit(0);
+    	exit(0);
+    if (key == 32){
+    	++i;
+    	Desenha();
+    }
 }
 
 // Função responsável por inicializar parâmetros e variáveis
-void Inicializa(void)
-{
+void Inicializa(void){
     // Define a janela de visualização 2D
     glMatrixMode(GL_PROJECTION);
     gluOrtho2D(-200,200,-200,200);
@@ -804,8 +791,7 @@ void Inicializa(void)
 }
 
 // Programa Principal
-int main(void)
-{
+int main(void){
     // Define do modo de operação da GLUT
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 
@@ -823,8 +809,6 @@ int main(void)
 
     // Chama a função responsável por fazer as inicializações
     Inicializa();
-
-
 
     // Inicia o processamento e aguarda interações do usuário
     glutMainLoop();
