@@ -1,2 +1,2 @@
 # Trabalho-OpenGL
-Trabalho realizado na cadeira de computação gráfica.
+Primeiro trabalho realizado na cadeira de computação gráfica.
