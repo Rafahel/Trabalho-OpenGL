@@ -4,7 +4,7 @@
 #include <GL/glut.h>
 #define GLUT_DISABLE_ATEXIT_HACK
 
-int i = 0; // Contador do desenho atual
+int i = 1; // Contador do desenho atual
 //// Função callback de redesenho da janela de visualização
 void figuraA(){
   glColor3f(0,1,0);
